@@ -1,6 +1,12 @@
 @import url("https://use.typekit.net/jhe8cif.css");
-
+@import '../../styles/mantine';
 $NeueHaasGrotesk: "neue-haas-grotesk-display", sans-serif;
+
+.container {
+  margin-bottom: rem(60px);
+  background-color: rgba(58, 77, 57, 0.5);
+  backdrop-filter: blur(10px);
+}
 
 .header {
   display: flex;
@@ -10,8 +16,6 @@ $NeueHaasGrotesk: "neue-haas-grotesk-display", sans-serif;
   height: 60px;
   padding: 0 1rem;
   border: none !important;
-  backdrop-filter: blur(10px);
-  background-color: #3a4d39;
 }
 
 .brand {
@@ -43,6 +47,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   border-radius: 5px;
+
   &:hover {
     background-color: #f7b32b;
     color: black;

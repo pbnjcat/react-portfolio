@@ -14,7 +14,7 @@ export default function Hero() {
           Easy-to-use cards, spend limits, approval flows, vendor payments,
           and more — plus an average savings of 5%
         </Text>
-        <Group className={classes.controls} mt={20}>
+        <Group className={classes.controls}>
           <Link to="/chat">
             <Button
               size="xl"

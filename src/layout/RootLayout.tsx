@@ -10,9 +10,9 @@ export default function RootLayout() {
         <Header />
       </AppShell.Header>
       <AppShell.Main>
-        {/* <Outlet /> */}
+        <Outlet />
       </AppShell.Main>
-      {/* <Footer /> */}
+      <Footer />
     </AppShell>
   );
 }

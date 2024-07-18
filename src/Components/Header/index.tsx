@@ -78,7 +78,7 @@ export default function Header() {
   ));
 
   return (
-    <Box pb={60}>
+    <Box className={classes.container}>
       <header className={classes.header}>
         <Link to="/">
           <Box className={classes.brand}>
@@ -88,7 +88,7 @@ export default function Header() {
             </Title>
           </Box>
         </Link>
-        <Group h="100%" gap={0} visibleFrom="lg">
+        <Group h="100%" gap={0} visibleFrom="md" className={classes.nav_menu}>
           <Link to="/" className={classes.link}>
             About the Team
           </Link>
@@ -136,27 +136,27 @@ export default function Header() {
         onClose={closeDrawer}
         size="100%"
         padding="md"
-        title="Navigation"
+        title="Menu"
         hiddenFrom="md"
         zIndex={1000000}
       >
-        <ScrollArea h={"100vh"} mx="-md">
+        <ScrollArea h={"100vh"} mx="-md" className={classes.drawer}>
           <Divider my="sm" />
 
-          <a href="#" className={classes.link}>
+          <Link to="#" className={classes.link}>
             Home
-          </a>
+          </Link>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
+          <Link to="#" className={classes.link}>
             Learn
-          </a>
-          <a href="#" className={classes.link}>
+          </Link>
+          <Link to="#" className={classes.link}>
             Academy
-          </a>
+          </Link>
           <Divider my="sm" />
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="outline">Log in</Button>
+            <Button variant="filled">Sign up</Button>
           </Group>
         </ScrollArea>
       </Drawer>
