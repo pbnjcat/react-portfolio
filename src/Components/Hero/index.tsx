@@ -9,38 +9,39 @@ export default function Hero() {
   return (
     <div className={classes.wrapper}>
       <Container component="section" size={1000} className={classes.inner} >
-        <Title className={classes.title}>Spending made smarter</Title>
+        <Title className={classes.title}>In the Money</Title>
         <Text className={classes.description} c="dimmed">
-          Easy-to-use cards, spend limits, approval flows, vendor payments,
-          and more — plus an average savings of 5%
+          Easy-to-use technology, spend limits, approval flows, vendor payments,
+          and more
         </Text>
         <Group className={classes.controls}>
-          <Link to="/chat">
-            <Button
-              size="xl"
-              className={classes.control}
-              variant="gradient"
-              gradient={{ from: 'blue', to: 'cyan' }}
-            >
-              Try Our Product
-              <IconArrowUpRight />
-            </Button>
-          </Link>
-          <Link to="/learn-more">
-            <Button
-              size="xl"
-              className={classes.control}
-              variant="gradient"
-              gradient={{ from: 'blue', to: 'cyan' }}
-            >
-              Learn More
-              <IconArrowDown />
-            </Button>
-          </Link>
+          <Button
+            component={Link}
+            to="/chat"
+            size="lg"
+            variant="gradient"
+            gradient={{ from: 'blue', to: 'cyan' }}
+          >
+            Try Our Product
+            <IconArrowUpRight />
+          </Button>
+          <Button
+            component={Link}
+            to="/learn-more"
+            size="lg"
+            classNames={ {
+              root: classes.ctrl_root,
+            }}
+            variant="gradient"
+            gradient={{ from: 'blue', to: 'cyan' }}
+          >
+            Learn More
+            <IconArrowDown />
+          </Button>
         </Group>
-        <Container component="section" className={classes.visuals}>
+        <Group mt={100} >
           <CardsComponent />
-        </Container>
+        </Group>
       </Container>
 
     </div>

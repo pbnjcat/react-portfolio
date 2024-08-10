@@ -1,21 +1,33 @@
 @import './mantine.scss';
-
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
-
-$Figtree: 'Figtree', sans-serif;
+@import './mixins';
+@import './variables';
 
 
-* {
+body {
+  margin: 0;
+  font-family: $Figtree;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-body {
-  font-family: $Figtree;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
+button,
+select {
+  text-transform: none;
+}
 
-
-
-
+h {
+  font-family: $FoundersGrotesk;
+}

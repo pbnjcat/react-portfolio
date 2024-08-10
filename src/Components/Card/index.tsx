@@ -1,8 +1,17 @@
-import { Card, Image, Text, Badge, Button, Group, Container, SimpleGrid, Title, Grid } from '@mantine/core';
+import {
+    Card,
+    Image,
+    Text,
+    Badge,
+    Group,
+    SimpleGrid,
+} from '@mantine/core';
 
-import image1 from '../../assets/wall1.jpg';
-import image2 from '../../assets/wall2.jpeg';
-import image3 from '../../assets/wall3.jpg';
+import { useMediaQuery } from '@mantine/hooks';
+
+import image1 from '../../assets/images/wall1.jpg';
+import image2 from '../../assets/images/wall2.jpeg';
+import image3 from '../../assets/images/wall3.jpg';
 
 import classes from './Card.module.scss';
 
@@ -35,31 +44,38 @@ const mockdata: DataItem[] = [
 ];
 
 export default function CardsComponent() {
+    const isMobile = useMediaQuery('(min-width: 48em)');
 
     const cards = mockdata.map((item, index) => (
-        <SimpleGrid cols={3} spacing={60} className={classes.grid} key={index}>
-            <Card shadow="sm" padding="lg" radius="lg" withBorder h={'100%'} >
-                <Card.Section>
-                    <Image
-                        fit='cover'
-                        src={item.image}
-                        height={200}
-                        alt={item.alt}
-                    />
-                </Card.Section>
-                <Group justify="space-between" mt="lg" mb="lg">
-                    <Text fw={500}>{item.title}</Text>
-                    <Badge color="yellow">Alert</Badge>
-                </Group>
-                <Text>
-                    {item.description}
-                </Text>
-            </Card>
-        </SimpleGrid>
+        <Card shadow="sm" padding="lg" radius="lg" h={'100%'} w={250} key={index}>
+            <Card.Section>
+                <Image
+                    fit='cover'
+                    src={item.image}
+                    height={200}
+                    alt={item.alt}
+                />
+            </Card.Section>
+            <Group justify="space-between" mt="lg" mb="lg">
+                <Text fw={500}>{item.title}</Text>
+                <Badge color="yellow">Alert</Badge>
+            </Group>
+            <Text>
+                {item.description}
+            </Text>
+        </Card>
     ))
     return (
         <section className={classes.wrapper}>
-            {cards}
+            {isMobile ? (
+                <SimpleGrid cols={3} spacing={30} className={classes.grid}>
+                    {cards}
+                </SimpleGrid>
+            ) : (
+                <SimpleGrid cols={1} spacing={30} className={classes.grid} >
+                    {cards[0]}
+                </SimpleGrid>
+            )}
         </section>
     )
 }

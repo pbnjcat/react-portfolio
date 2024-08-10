@@ -1,56 +1,71 @@
-@import url("https://use.typekit.net/jhe8cif.css");
 @import '../../styles/mantine';
-$NeueHaasGrotesk: "neue-haas-grotesk-display", sans-serif;
+@import '../../styles/variables';
 
-.container {
-  margin-bottom: rem(60px);
-  background-color: rgba(58, 77, 57, 0.5);
-  backdrop-filter: blur(10px);
-}
-
-.header {
+.wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 60px;
-  padding: 0 1rem;
-  border: none !important;
+  height: rem(60px);
+  padding: 0 rem(10px);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  z-index: 1000;
 }
 
 .brand {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 5px;
+  color: inherit;
   cursor: pointer;
 }
 
-.title {
+.brand_title {
+  font-family: $FoundersGrotesk;
   text-decoration: none;
-  color: white;
-  font-size: 18;
-  font-weight: 400;
-  font-family: $NeueHaasGrotesk;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.brand .action_btn {
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow: auto;
 }
 
 a {
   text-decoration: none;
 }
 
+.link_container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .link {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10px;
+  color: inherit;
   padding: 10px;
-  color: white;
   text-decoration: none;
   cursor: pointer;
   border-radius: 5px;
 
   &:hover {
-    background-color: #f7b32b;
-    color: black;
+    color: $highlight-color;
     transition: ease-in-out 0.2s;
+  }
+}
+
+.action_btn {
+
+  button {
+    font-weight: 400;
   }
 }
