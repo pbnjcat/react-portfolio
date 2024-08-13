@@ -1,8 +1,8 @@
 import { Text, Container, useMantineTheme, Title } from '@mantine/core';
-import { Carousel } from '@mantine/carousel'
+import { Carousel } from '@mantine/carousel';
 import classes from './Carousel.module.scss';
 
-export default function BrandCarousel() {
+export default function CarouselComponent() {
     return (
         <section className={classes.carousel_wrapper}>
             <Text>

@@ -1,9 +1,16 @@
-@import '../../styles/mantine';
+@import "../../styles/mantine";
 
 .wrapper {
-    width: 100%;
+  /* General wrapper styles */
 }
 
 .grid {
-    
+  display: grid;
+  grid-gap: 30px;
+
+  grid-template-columns: repeat(1, 1fr);
+
+  @include larger-than($mantine-breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

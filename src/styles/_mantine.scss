@@ -18,12 +18,14 @@ $mantine-breakpoint-xl: '88em';
 
 @mixin light {
   [data-mantine-color-scheme='light'] & {
+    transition: ease-in-out 0.2s;
     @content;
   }
 }
 
 @mixin dark {
   [data-mantine-color-scheme='dark'] & {
+    transition: ease-in-out 0.2s;
     @content;
   }
 }

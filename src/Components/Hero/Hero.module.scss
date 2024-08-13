@@ -1,14 +1,10 @@
-@import '../../styles/mantine';
-@import '../../styles/variables';
+@import "../../styles/mantine";
+@import "../../styles/variables";
 
 .wrapper {
-  box-sizing: border-box;
   height: 100%;
   font-size: rem(60px);
 
-  @media (min-width: $mantine-breakpoint-sm) {
-    height: 95vh;
-  }
 }
 
 .inner {
@@ -19,7 +15,7 @@
   padding-top: rem(150px);
   position: relative;
 
-  @media (min-width: $mantine-breakpoint-sm) {
+  @include larger-than($mantine-breakpoint-sm) {
     padding-bottom: rem(120px);
   }
 
@@ -54,9 +50,8 @@
     font-size: rem(20px);
 
     @include larger-than($mantine-breakpoint-md) {
-      font-size: rem(20px);
+      font-size: rem(23px);
     }
-
 
     @include larger-than($mantine-breakpoint-lg) {
       font-size: rem(25px);
@@ -65,14 +60,20 @@
 
   .controls {
     align-items: center;
-
-    @media(max-width: $mantine-breakpoint-sm) {
-      flex-direction: column;
+    flex-direction: column;
+    gap: rem(30px);
+    
+    @include larger-than($mantine-breakpoint-sm) {
+      flex-direction: row;
       gap: rem(30px);
     }
 
     &:hover {
       transition: ease-in-out 0.2s;
     }
+  }
+
+  &_visuals{
+
   }
 }

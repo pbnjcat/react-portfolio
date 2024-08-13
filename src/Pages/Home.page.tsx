@@ -6,12 +6,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Container component="section" p={'lg'} pt={100}>
+      <Box component="section">
         <Title order={1}>The card is just the start</Title>
         <Text c="black" style={{ textAlign: "center" }}>
           Everything you need to control spend and optimize finance operations, all on a single platform.
         </Text>
-      </Container>
+      </Box>
     </>
   );
 }

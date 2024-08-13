@@ -1,5 +1,5 @@
-@import '../../styles/mantine';
-@import '../../styles/variables';
+@import "../../styles/mantine";
+@import "../../styles/variables";
 
 .wrapper {
   display: flex;
@@ -19,23 +19,6 @@
   gap: 5px;
   color: inherit;
   cursor: pointer;
-}
-
-.brand_title {
-  font-family: $FoundersGrotesk;
-  text-decoration: none;
-  font-size: 26px;
-  font-weight: 800;
-}
-
-.brand .action_btn {
-  flex-grow: 1;
-  flex-basis: 0;
-  overflow: auto;
-}
-
-a {
-  text-decoration: none;
 }
 
 .link_container {
@@ -63,8 +46,15 @@ a {
   }
 }
 
-.action_btn {
+#icon_up {
+  transition: transform 0.3s ease;
 
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+.action_btn {
   button {
     font-weight: 400;
   }

@@ -4,7 +4,6 @@ import {
   Group,
   Image,
   Box,
-  SimpleGrid,
   Divider,
   Text,
   Anchor,
@@ -13,13 +12,14 @@ import {
   Drawer,
   Collapse,
   ScrollArea,
-  Burger
+  Burger,
 } from "@mantine/core";
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure } from "@mantine/hooks";
 
-import classes from "./Header.module.scss";
-import Logo from "../../assets/images/finance-icon-17-light.png";
 import { Link } from "react-router-dom";
+import ColorToggle from "../ColorSchemeToggle/ColorSchemeToggle";
+import Logo from "../../assets/images/finance-icon-17-light.png";
+
 import {
   IconNotification,
   IconCode,
@@ -28,44 +28,47 @@ import {
   IconFingerprint,
   IconCoin,
   IconChevronDown,
+  IconChevronUp,
 } from "@tabler/icons-react";
-import ColorToggle from "../ColorSchemeToggle/ColorSchemeToggle";
+
+import classes from "./Header.module.scss";
 
 const mockdata = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
   },
   {
     icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
   },
   {
     icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
   },
   {
     icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
   },
   {
     icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
   },
 ];
 
 export default function Header() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+    useDisclosure(false);
   const [loading, setLoading] = useState(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
 
@@ -84,10 +87,7 @@ export default function Header() {
   return (
     <Box className={classes.wrapper}>
       <Box component={Link} to="/" className={classes.brand}>
-        <Image alt="header" src={Logo} h={30} w={30} />
-        <h2 className={classes.brand_title}>
-          Logo
-        </h2>
+        <Image alt="header" src={Logo} h={40} w={40} />
       </Box>
       <Group visibleFrom="md" className={classes.link_container}>
         <Link to="/" className={classes.link}>
@@ -100,37 +100,44 @@ export default function Header() {
           <HoverCard.Target>
             <Box component="a" className={classes.link}>
               <Text>Resources</Text>
-              <IconChevronDown />
+              <div id="icon_up">
+                <IconChevronUp size={24} />
+              </div>
             </Box>
           </HoverCard.Target>
           <HoverCard.Dropdown>
             <Group justify="space-between" px="md">
               <Text fw={500}>Resources</Text>
-              <Anchor href="#" fz="xs">View All</Anchor>
+              <Anchor href="#" fz="xs">
+                View All
+              </Anchor>
             </Group>
             <Divider my="sm" />
-            <SimpleGrid cols={3}>
-            </SimpleGrid>
+            <div className={classes.links_grid}></div>
           </HoverCard.Dropdown>
         </HoverCard>
         <Link to="/" className={classes.link}>
           Pricing
         </Link>
       </Group>
-      <Group visibleFrom="sm" gap={10} className={classes.action_btn}>
-        <Button variant="outline" loading={loading} loaderProps={{ type: 'oval', color: 'gray' }}>
-          <Text>
-            Sign Up
-          </Text>
+      <Group visibleFrom="md" gap={10} className={classes.action_btn}>
+        <Button
+          variant="outline"
+          loading={loading}
+          loaderProps={{ type: "oval", color: "gray" }}
+        >
+          <Text>Sign Up</Text>
         </Button>
-        <Button variant="filled" loading={loading} loaderProps={{ type: 'oval', color: 'gray' }}>
-          <Text>
-            Sign In
-          </Text>
+        <Button
+          variant="filled"
+          loading={loading}
+          loaderProps={{ type: "oval", color: "gray" }}
+        >
+          <Text>Sign In</Text>
         </Button>
         <ColorToggle />
       </Group>
-      <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+      <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="md" />
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
