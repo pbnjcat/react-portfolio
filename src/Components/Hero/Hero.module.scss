@@ -68,7 +68,7 @@
       gap: rem(30px);
     }
 
-    &:hover {
+    @include hover {
       transition: ease-in-out 0.2s;
     }
   }

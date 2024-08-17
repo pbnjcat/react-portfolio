@@ -100,9 +100,7 @@ export default function Header() {
           <HoverCard.Target>
             <Box component="a" className={classes.link}>
               <Text>Resources</Text>
-              <div id="icon_up">
-                <IconChevronUp size={24} />
-              </div>
+              <IconChevronUp className={classes.icon_up} size={24} />
             </Box>
           </HoverCard.Target>
           <HoverCard.Dropdown>
@@ -123,12 +121,16 @@ export default function Header() {
       <Group visibleFrom="md" gap={10} className={classes.action_btn}>
         <Button
           variant="outline"
+          component={Link}
+          to="/signup"
           loading={loading}
           loaderProps={{ type: "oval", color: "gray" }}
         >
           <Text>Sign Up</Text>
         </Button>
         <Button
+          component={Link}
+          to="/login"
           variant="filled"
           loading={loading}
           loaderProps={{ type: "oval", color: "gray" }}
@@ -145,6 +147,9 @@ export default function Header() {
         padding="md"
         title="Menu"
         hiddenFrom="md"
+        classNames={{
+          title: classes.drawer_title
+        }}
         zIndex={1000000}
       >
         <ScrollArea h={"100vh"} mx="-md" className={classes.drawer}>

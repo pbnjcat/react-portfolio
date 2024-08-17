@@ -40,16 +40,21 @@
   cursor: pointer;
   border-radius: 5px;
 
-  &:hover {
+  @include hover {
     color: $highlight-color;
     transition: ease-in-out 0.2s;
+    .icon_up {
+      transform: rotate(180deg);
+    }
   }
+
+
 }
 
 #icon_up {
   transition: transform 0.3s ease;
 
-  &:hover {
+  @include hover {
     transform: rotate(180deg);
   }
 }
@@ -58,4 +63,8 @@
   button {
     font-weight: 400;
   }
+}
+
+.drawer_title {
+  justify-content: center;
 }

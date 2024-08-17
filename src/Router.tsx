@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './Pages/Home.page';
 import RootLayout from './layout/RootLayout';
 import NotFoundPage from './Pages/NotFound.page';
+import SignUpPage from './Pages/SignUp.page';
+import LoginPage from './Pages/Login.page';
 
 const router = createBrowserRouter([
   {
@@ -13,16 +15,16 @@ const router = createBrowserRouter([
         element: <HomePage />,
         errorElement: <NotFoundPage />,
       },
-      // {
-      //   path: "bookmarks",
-      //   element: <Bookmarks />,
-      //   errorElement: <Error />,
-      // },
-      // {
-      //   path: "history",
-      //   element: <History />,
-      //   errorElement: <Error />,
-      // },
+      {
+        path: "signup",
+        element: <SignUpPage />,
+        errorElement: <NotFoundPage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+        errorElement: <NotFoundPage />,
+      },
       {
         path: '*',
         element: <NotFoundPage />,
