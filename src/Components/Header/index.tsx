@@ -27,7 +27,6 @@ import {
   IconChartPie3,
   IconFingerprint,
   IconCoin,
-  IconChevronDown,
   IconChevronUp,
 } from "@tabler/icons-react";
 
@@ -111,7 +110,7 @@ export default function Header() {
               </Anchor>
             </Group>
             <Divider my="sm" />
-            <div className={classes.links_grid}></div>
+            <Group className={classes.links_grid}></Group>
           </HoverCard.Dropdown>
         </HoverCard>
         <Link to="/" className={classes.link}>

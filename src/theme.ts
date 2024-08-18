@@ -1,12 +1,5 @@
-import { createTheme, Title } from '@mantine/core';
-import classes from './styles/_variables.scss';
+import { createTheme } from '@mantine/core';
 
 export const theme = createTheme({
   primaryColor: 'cyan',
-  components: {
-    Title: Title.extend({
-      defaultProps: {
-      }
-    })
-  }
 });

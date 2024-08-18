@@ -7,11 +7,21 @@
   align-items: center;
   width: 100%;
   height: rem(60px);
-  padding: 0 rem(10px);
-  backdrop-filter: blur(20px);
+  padding: rem(10px);
   position: fixed;
   z-index: 1000;
+
+  @include light {
+    background-color: var(--mantine-color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  @include dark {
+    background-color: var(--mantine-color-dark-7);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  }
 }
+
 
 .brand {
   display: flex;
@@ -43,6 +53,7 @@
   @include hover {
     color: $highlight-color;
     transition: ease-in-out 0.2s;
+
     .icon_up {
       transform: rotate(180deg);
     }

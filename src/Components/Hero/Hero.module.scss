@@ -4,7 +4,6 @@
 .wrapper {
   height: 100%;
   font-size: rem(60px);
-
 }
 
 .inner {
@@ -74,6 +73,7 @@
   }
 
   &_visuals{
-
+    margin: 0 auto;
+    margin-top: rem(100px);
   }
 }

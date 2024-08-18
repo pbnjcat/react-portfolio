@@ -1,4 +1,4 @@
-import { Text, Title, Box, Container } from '@mantine/core';
+import { Text, Title, Box} from '@mantine/core';
 
 import Hero from '../Components/Hero';
 

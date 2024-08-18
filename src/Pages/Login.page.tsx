@@ -2,13 +2,13 @@ import { Text, Title, Box, Container } from '@mantine/core';
 
 export default function LoginPage() {
   return (
-    <>
-      <Box component="section">
-        <Title order={1}>Sign In</Title>
-        <Text c="black" style={{ textAlign: "center" }}>
-          Sign in Here
+    <div >
+      <Container component="section" >
+        <Text c="dimmed">
+          Easy-to-use technology, spend limits, approval flows, vendor
+          payments, and more
         </Text>
-      </Box>
-    </>
+      </Container>
+    </div>
   );
 }

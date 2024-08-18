@@ -41,7 +41,7 @@ export default function Hero() {
             <IconArrowDown />
           </Button>
         </Group>
-        <Group className={classes.inner_visuals} mt={100}>
+        <Group className={classes.inner_visuals}>
           <CardsComponent />
           <CarouselComponent />
         </Group>

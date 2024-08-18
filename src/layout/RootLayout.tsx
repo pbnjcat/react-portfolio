@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 
 export default function RootLayout() {
   return (
-    <AppShell>
+    <AppShell header={{ height: 60 }}>
       <Header />
       <AppShell.Main>
         <Outlet />

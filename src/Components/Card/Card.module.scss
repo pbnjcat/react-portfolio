@@ -1,16 +1,18 @@
 @import "../../styles/mantine";
 
-.wrapper {
-  /* General wrapper styles */
-}
+.wrapper {}
 
 .grid {
   display: grid;
-  grid-gap: 30px;
 
+  justify-content: center;
+  align-items: center;
+  grid-gap: 30px;
   grid-template-columns: repeat(1, 1fr);
 
   @include larger-than($mantine-breakpoint-md) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .card_container {}
 }

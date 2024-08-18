@@ -35,7 +35,7 @@ const mockdata: DataItem[] = [
 ];
 
 export default function CardsComponent() {
-  const cards = mockdata.map((item, index) => (
+  const card = mockdata.map((item, index) => (
     <Card
       shadow="sm"
       padding="lg"
@@ -43,6 +43,7 @@ export default function CardsComponent() {
       h="100%"
       w={250}
       key={index}
+      className={classes.card_container}
     >
       <Card.Section>
         <Image fit="cover" src={item.image} height={200} alt={item.alt} />
@@ -56,8 +57,6 @@ export default function CardsComponent() {
   ));
 
   return (
-    <section className={classes.wrapper}>
-      <div className={classes.grid}>{cards}</div>
-    </section>
+      <Group className={classes.grid}>{card}</Group>
   );
 }

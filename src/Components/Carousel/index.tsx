@@ -4,10 +4,10 @@ import classes from './Carousel.module.scss';
 
 export default function CarouselComponent() {
     return (
-        <section className={classes.carousel_wrapper}>
+        <Container className={classes.carousel_wrapper}>
             <Text>
                 <Title order={1}></Title>
             </Text>
-        </section>
+        </Container>
     )
 }
