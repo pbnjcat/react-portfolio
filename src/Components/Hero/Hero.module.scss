@@ -21,8 +21,6 @@
   .title {
     text-align: center;
     font-size: rem(40px);
-    font-family: $FoundersGrotesk;
-    font-weight: 900;
     line-height: 1.3;
 
     @include light {
@@ -73,7 +71,6 @@
   }
 
   &_visuals{
-    margin: 0 auto;
     margin-top: rem(100px);
   }
 }

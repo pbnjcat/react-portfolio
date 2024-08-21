@@ -1,33 +1,9 @@
 @import './mantine.scss';
+@import './resets';
 @import './mixins';
 @import './variables';
-
 
 body {
   margin: 0;
   font-family: $Figtree;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-h {
-  font-family: $FoundersGrotesk;
 }

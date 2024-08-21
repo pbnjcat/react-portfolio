@@ -3,6 +3,8 @@ import {
   Button,
   Group,
   Image,
+  Stack,
+  Title,
   Box,
   Divider,
   Text,
@@ -66,8 +68,7 @@ const mockdata = [
 ];
 
 export default function Header() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
-    useDisclosure(false);
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [loading, setLoading] = useState(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
 
@@ -85,32 +86,32 @@ export default function Header() {
 
   return (
     <Box className={classes.wrapper}>
-      <Box component={Link} to="/" className={classes.brand}>
-        <Image alt="header" src={Logo} h={40} w={40} />
+      <Box mt={10} component={Link} to="/" className={classes.brand}>
+        <Title order={2} fw={300} fz={25} visibleFrom="xs">React Cookbook</Title>
       </Box>
-      <Group visibleFrom="md" className={classes.link_container}>
+      <Group className={classes.link_container} visibleFrom="sm">
         <Link to="/" className={classes.link}>
           About Us
         </Link>
         <Link to="/" className={classes.link}>
           Customers
         </Link>
-        <HoverCard width={600} radius="md" position="bottom" shadow="md">
+        <HoverCard width={600} radius="md" position="bottom" shadow="md" zIndex={2000}>
           <HoverCard.Target>
             <Box component="a" className={classes.link}>
-              <Text>Resources</Text>
-              <IconChevronUp className={classes.icon_up} size={24} />
+                <Text>Resources</Text>
+                <IconChevronUp className={classes.icon_up} size={24} />
             </Box>
           </HoverCard.Target>
           <HoverCard.Dropdown>
-            <Group justify="space-between" px="md">
+            <Group justify="space-between" px="md" >
               <Text fw={500}>Resources</Text>
               <Anchor href="#" fz="xs">
                 View All
               </Anchor>
             </Group>
             <Divider my="sm" />
-            <Group className={classes.links_grid}></Group>
+            <div className={classes.links_grid}></div>
           </HoverCard.Dropdown>
         </HoverCard>
         <Link to="/" className={classes.link}>
@@ -138,32 +139,34 @@ export default function Header() {
         </Button>
         <ColorToggle />
       </Group>
-      <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="md" />
+      <Burger className={classes.burger_icon} opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="md" />
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
         size="100%"
         padding="md"
-        title="Menu"
         hiddenFrom="md"
-        classNames={{
-          title: classes.drawer_title
-        }}
         zIndex={1000000}
       >
         <ScrollArea h={"100vh"} mx="-md" className={classes.drawer}>
+          <Title className={classes.drawer_title}>Menu</Title>
           <Divider my="sm" />
-          <Link to="#" className={classes.link}>
-            Home
-          </Link>
-          <Collapse in={linksOpened}>{links}</Collapse>
-          <Link to="#" className={classes.link}>
-            Learn
-          </Link>
-          <Link to="#" className={classes.link}>
-            Academy
-          </Link>
-          <Divider my="sm" />
+          <Stack gap={"sm"}>
+            <Link to="#" className={classes.drawer_link}>
+              Home
+            </Link>
+            <Collapse in={linksOpened}>{links}</Collapse>
+            <Link to="#" className={classes.drawer_link}>
+              About Us
+            </Link>
+            <Link to="#" className={classes.drawer_link}>
+              Resources
+            </Link>
+            <Link to="#" className={classes.drawer_link}>
+              Pricing
+            </Link>
+            <Divider my="sm" />
+          </Stack>
           <Group justify="center" pb="xl" px="md">
             <Button variant="outline">Log in</Button>
             <Button variant="filled">Sign up</Button>

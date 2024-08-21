@@ -20,16 +20,12 @@ $mantine-breakpoint-xl: '88em';
   [data-mantine-color-scheme='light'] & {
     @content;
   }
-
-  transition: ease-in-out 0.2s;
 }
 
 @mixin dark {
   [data-mantine-color-scheme='dark'] & {
     @content;
   }
-
-  transition: ease-in-out 0.2s;
 }
 
 // hover styling for hover and touch devices

@@ -1,4 +1,4 @@
-import { Card, Image, Text, Badge, Group, SimpleGrid } from "@mantine/core";
+import { Card, Image, Text, Badge, Group } from "@mantine/core";
 
 import image1 from "../../assets/images/wall1.jpg";
 import image2 from "../../assets/images/wall2.jpeg";
@@ -36,15 +36,7 @@ const mockdata: DataItem[] = [
 
 export default function CardsComponent() {
   const card = mockdata.map((item, index) => (
-    <Card
-      shadow="sm"
-      padding="lg"
-      radius="lg"
-      h="100%"
-      w={250}
-      key={index}
-      className={classes.card_container}
-    >
+    <Card key={index}>
       <Card.Section>
         <Image fit="cover" src={item.image} height={200} alt={item.alt} />
       </Card.Section>
@@ -57,6 +49,6 @@ export default function CardsComponent() {
   ));
 
   return (
-      <Group className={classes.grid}>{card}</Group>
+    <div className={classes.grid}>{card}</div>
   );
 }

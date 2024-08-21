@@ -1,4 +1,4 @@
-import { Container, Text, Button, Group, Title } from "@mantine/core";
+import { Container, Text, Button, Group, Title, Box } from "@mantine/core";
 import { IconArrowDown, IconArrowUpRight } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
@@ -11,11 +11,11 @@ export default function Hero() {
   return (
     <div className={classes.wrapper}>
       <Container component="section" className={classes.inner}>
-          <Title className={classes.title}>In the Money</Title>
-          <Text className={classes.description} c="dimmed">
-            Easy-to-use technology, spend limits, approval flows, vendor
-            payments, and more
-          </Text>
+        <Title className={classes.title}>In the Money</Title>
+        <Text className={classes.description} c="dimmed">
+          Easy-to-use technology, spend limits, approval flows, vendor
+          payments, and more
+        </Text>
         <Group className={classes.controls}>
           <Button
             component={Link}
@@ -42,8 +42,10 @@ export default function Hero() {
           </Button>
         </Group>
         <Group className={classes.inner_visuals}>
-          <CardsComponent />
-          <CarouselComponent />
+          <Box content="center">
+            <CardsComponent />
+            <CarouselComponent />
+          </Box>
         </Group>
       </Container>
     </div>

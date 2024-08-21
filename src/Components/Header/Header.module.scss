@@ -13,22 +13,28 @@
 
   @include light {
     background-color: var(--mantine-color-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   @include dark {
     background-color: var(--mantine-color-dark-7);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
 
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  text-decoration: none;
   color: inherit;
   cursor: pointer;
+
+  @include light {
+    color: var(--mantine-color-dark-7);
+  }
+
+  @include dark {
+    color: var(--mantine-color-white);
+  }
 }
 
 .link_container {
@@ -45,10 +51,9 @@
   justify-content: center;
   align-items: center;
   color: inherit;
-  padding: 10px;
+  gap: 5px;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 5px;
 
   @include hover {
     color: $highlight-color;
@@ -59,11 +64,12 @@
     }
   }
 
-
+  @include larger-than($mantine-breakpoint-md) {
+    margin: 0 10px;
+  }
 }
 
-#icon_up {
-  transition: transform 0.3s ease;
+.icon_up {
 
   @include hover {
     transform: rotate(180deg);
@@ -78,4 +84,32 @@
 
 .drawer_title {
   justify-content: center;
+}
+
+.burger_icon {
+  @include light {
+    color: var(--mantine-color-dark-7);
+  }
+
+  @include dark {
+    color: var(--mantine-color-white);
+  }
+
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.drawer_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+  padding: rem(10px);
+  text-decoration: none;
+  cursor: pointer;
+
+  @include hover {
+    background-color: $highlight-color;
+    transition: ease-in-out 0.2s;
+  }
 }

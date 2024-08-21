@@ -1,0 +1,15 @@
+@import './variables';
+@import './mixins';
+@import './mantine';
+
+.button {
+    text-transform: none;
+}
+
+.card {
+    box-shadow: var(--mantine-shadow-sm);
+    padding: var(--mantine-padding-lg);
+    height: 100%;
+    border-radius: var(--mantine-radius-lg);
+    width: rem(250px);
+}

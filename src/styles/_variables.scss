@@ -1,9 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
 
+//light
 @font-face {
-    font-family: 'Grotesk';
-    src: url('../assets/fonts/Founders_Grotesk/');
+  font-family: 'Grotesk';
+  src: url('../assets/fonts/Founders_Grotesk/FoundersGrotesk-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
 }
-$highlight-color: rgb(40, 118, 219);
+
+// regular
+@font-face {
+  font-family: 'Grotesk';
+  src: url('../assets/fonts/Founders_Grotesk/FoundersGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+//bold 
+@font-face {
+  font-family: 'Grotesk';
+  src: url('../assets/fonts/Founders_Grotesk/FoundersGrotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 $FoundersGrotesk: 'Grotesk', sans-serif;
 $Figtree: 'Figtree', sans-serif;
+
+$highlight-color: rgb(40, 118, 219);
+$lightmode-color: var(--mantine-color-white);
+$darkmode-color:  var(--mantine-color-dark-7);
+
+$font-weights: (
+  'big': 1.8rem,
+  'med': 1rem,
+  'small': 0.8rem,
+);
