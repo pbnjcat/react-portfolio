@@ -13,3 +13,12 @@
     border-radius: var(--mantine-radius-lg);
     width: rem(250px);
 }
+
+.anchor {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.title {
+    font-weight: map-get($map: $font-weights, $key: "small");
+}

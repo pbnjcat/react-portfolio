@@ -1,13 +1,14 @@
 import {
   Button,
   Card,
-  Title,
   createTheme,
+  Anchor,
+  Title,
+  Drawer,
   DEFAULT_THEME,
 } from "@mantine/core";
 
 import classes from './styles/theme.module.scss'
-import './styles/_variables.scss';
 
 export const theme = createTheme({
   fontFamily: 'Grotesk, sans-serif',
@@ -27,6 +28,16 @@ export const theme = createTheme({
       classNames: {
         root: classes.button,
       },
+    }),
+    Anchor: Anchor.extend({
+      classNames: {
+        root: classes.anchor,
+      }
+    }),
+    Title: Title.extend({
+      classNames: {
+        root: classes.title,
+      }
     }),
   }
 });

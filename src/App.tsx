@@ -1,4 +1,4 @@
-import { MantineProvider, localStorageColorSchemeManager } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 import { theme } from './theme';
 import { Router } from './Router';
 

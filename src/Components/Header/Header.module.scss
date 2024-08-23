@@ -1,30 +1,32 @@
 @import "../../styles/mantine";
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: rem(60px);
-  padding: rem(10px);
+  width: 100vw;
+  height: rem(80px);
+  padding: rem(20px);
   position: fixed;
   z-index: 1000;
 
   @include light {
     background-color: var(--mantine-color-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   @include dark {
     background-color: var(--mantine-color-dark-7);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
 
 
 .brand {
   text-decoration: none;
+  line-height: 0;
   color: inherit;
   cursor: pointer;
 
@@ -37,56 +39,47 @@
   }
 }
 
-.link_container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.link_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
+  flex-direction: row;
+  justify-content: space-around;
 
-.link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: inherit;
-  gap: 5px;
-  text-decoration: none;
-  cursor: pointer;
+  &_item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    padding: rem(10px);
 
-  @include hover {
-    color: $highlight-color;
-    transition: ease-in-out 0.2s;
+    .link {
+      z-index: 20;
+      color: inherit;
+      font-weight: map-get($map: $font-weights, $key: 'regular');
+      font-size: rem(16px);
+      text-decoration: none;
+      cursor: pointer;
 
-    .icon_up {
-      transform: rotate(180deg);
+      @include larger-than($mantine-breakpoint-md) {
+        margin: 0 10px;
+      }
+    }
+
+    @include hover {
+      @include light-dark (color, $skyblue, $ocean-blue);
+      transition: ease-in-out 0.2s;
     }
   }
-
-  @include larger-than($mantine-breakpoint-md) {
-    margin: 0 10px;
-  }
-}
-
-.icon_up {
-
-  @include hover {
-    transform: rotate(180deg);
-  }
-}
-
-.action_btn {
-  button {
-    font-weight: 400;
-  }
-}
-
-.drawer_title {
-  justify-content: center;
 }
 
 .burger_icon {
+  @include larger-than($mantine-breakpoint-xs) {
+    display: none;
+  }
+
   @include light {
     color: var(--mantine-color-dark-7);
   }
@@ -99,17 +92,42 @@
   transition: color 0.3s ease;
 }
 
-.drawer_link {
+.drawer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: inherit;
-  padding: rem(10px);
-  text-decoration: none;
-  cursor: pointer;
+  height: 100%;
 
-  @include hover {
-    background-color: $highlight-color;
-    transition: ease-in-out 0.2s;
+  @include larger-than($mantine-breakpoint-sm) {
+    display: none;
+    width: 0;
+  }
+
+  &_item {
+    text-decoration: none;
+    padding: rem(10px) !important;
+    border-radius: rem(5px);
+    text-align: center;
+    font-size: rem(20px) !important;
+    font-weight: map-get($map: $font-weights, $key: "regular") !important;
+    font-family: $Figtree !important;
+
+    @include hover {
+      @include light-dark (background-color, $skyblue, $ocean-blue);
+      transition: ease-in-out 0.2s;
+    }
+  }
+
+  &_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_title {
+      margin-top: rem(10px) !important;
+      font-size: rem(30px) !important;
+      font-family: $FoundersGrotesk !important;
+      font-weight: map-get($map: $font-weights, $key: "small") !important;
+    }
   }
 }

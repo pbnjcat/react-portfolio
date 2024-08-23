@@ -1,8 +1,9 @@
 @import "../../styles/mantine";
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .wrapper {
-  height: 100%;
+  height: 100vh;
   font-size: rem(60px);
 }
 
@@ -20,8 +21,9 @@
 
   .title {
     text-align: center;
-    font-size: rem(40px);
+    font-weight: map-get($map: $font-weights, $key: "regular");
     line-height: 1.3;
+    font-size: rem(45px);
 
     @include light {
       color: var(--mantine-color-dark);
@@ -29,10 +31,6 @@
 
     @include dark {
       color: var(--mantine-color-white);
-    }
-
-    @include larger-than($mantine-breakpoint-md) {
-      font-size: rem(45px);
     }
 
     @include larger-than($mantine-breakpoint-lg) {
@@ -43,22 +41,22 @@
   .description {
     text-align: center;
     margin-inline: rem(50px);
-    margin: var(--mantine-spacing-xl);
+    color: $ocean-blue;
     font-size: rem(20px);
-
-    @include larger-than($mantine-breakpoint-md) {
-      font-size: rem(23px);
-    }
+    margin: var(--mantine-spacing-xl);
+    font-weight: map-get($map: $font-weights, $key: "regular");
 
     @include larger-than($mantine-breakpoint-lg) {
-      font-size: rem(25px);
+      font-size: rem(30px);
     }
   }
 
   .controls {
     align-items: center;
+    color: $ocean-blue;
     flex-direction: column;
     gap: rem(30px);
+    font-weight: map-get($map: $font-weights, $key: "regular");
     
     @include larger-than($mantine-breakpoint-sm) {
       flex-direction: row;

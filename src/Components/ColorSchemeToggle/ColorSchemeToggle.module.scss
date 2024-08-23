@@ -1,0 +1,7 @@
+.light_dark {
+    transition: all .1s ease-in-out;
+    transform-origin: 0 0;
+    &:hover {
+        transform: scale(1.2);
+    }
+}

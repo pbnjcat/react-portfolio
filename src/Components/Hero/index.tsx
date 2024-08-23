@@ -1,52 +1,28 @@
-import { Container, Text, Button, Group, Title, Box } from "@mantine/core";
-import { IconArrowDown, IconArrowUpRight } from "@tabler/icons-react";
+import { Container, Text, Button, Title } from "@mantine/core";
+import { IconArrowDown } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
-
-import CardsComponent from "../Card";
-import CarouselComponent from "../Carousel";
 
 import classes from "./Hero.module.scss";
 
 export default function Hero() {
+
   return (
     <div className={classes.wrapper}>
       <Container component="section" className={classes.inner}>
-        <Title className={classes.title}>In the Money</Title>
-        <Text className={classes.description} c="dimmed">
-          Easy-to-use technology, spend limits, approval flows, vendor
-          payments, and more
+        <Title order={1} className={classes.title}>Hello, I'm Randy</Title>
+        <Text className={classes.description}>
+          A web developer.
         </Text>
-        <Group className={classes.controls}>
-          <Button
-            component={Link}
-            to="/chat"
-            size="lg"
-            variant="gradient"
-            gradient={{ from: "blue", to: "cyan" }}
-          >
-            Try Our Product
-            <IconArrowUpRight />
-          </Button>
-          <Button
-            component={Link}
-            to="/learn-more"
-            size="lg"
-            classNames={{
-              root: classes.ctrl_root,
-            }}
-            variant="gradient"
-            gradient={{ from: "blue", to: "cyan" }}
-          >
-            Learn More
-            <IconArrowDown />
-          </Button>
-        </Group>
-        <Group className={classes.inner_visuals}>
-          <Box content="center">
-            <CardsComponent />
-            <CarouselComponent />
-          </Box>
-        </Group>
+        <Button
+          variant="transparent"
+          component={Link}
+          to="/learn-more"
+          size="lg"
+          className={classes.controls}
+        >
+          Learn more about me
+          <IconArrowDown />
+        </Button>
       </Container>
     </div>
   );

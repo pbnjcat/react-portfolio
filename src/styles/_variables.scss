@@ -27,12 +27,13 @@
 $FoundersGrotesk: 'Grotesk', sans-serif;
 $Figtree: 'Figtree', sans-serif;
 
-$highlight-color: rgb(40, 118, 219);
+$skyblue: rgb(145, 192, 253);
+$ocean-blue: rgb(45, 123, 224);
 $lightmode-color: var(--mantine-color-white);
-$darkmode-color:  var(--mantine-color-dark-7);
+$darkmode-color: var(--mantine-color-dark-7);
 
 $font-weights: (
-  'big': 1.8rem,
-  'med': 1rem,
-  'small': 0.8rem,
+  'bold': 700,
+  'regular': 500,
+  'small': 300,
 );
