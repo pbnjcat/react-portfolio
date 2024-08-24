@@ -1,4 +1,4 @@
-import { Container, Text, Button, Title } from "@mantine/core";
+import { Box, Text, Button, Title } from "@mantine/core";
 import { IconArrowDown } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ export default function Hero() {
 
   return (
     <div className={classes.wrapper}>
-      <Container component="section" className={classes.inner}>
+      <Box component="section" className={classes.inner}>
         <Title order={1} className={classes.title}>Hello, I'm Randy</Title>
         <Text className={classes.description}>
           A web developer.
@@ -23,7 +23,7 @@ export default function Hero() {
           Learn more about me
           <IconArrowDown />
         </Button>
-      </Container>
+      </Box>
     </div>
   );
 }

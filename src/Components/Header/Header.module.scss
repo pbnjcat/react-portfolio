@@ -23,7 +23,6 @@
   }
 }
 
-
 .brand {
   text-decoration: none;
   line-height: 0;
@@ -45,20 +44,19 @@
   padding: 0;
   display: flex;
   align-items: center;
-  flex-direction: row;
   justify-content: space-around;
 
   &_item {
     position: relative;
-    height: 100%;
-    display: flex;
-    cursor: pointer;
+    display: inline;
     padding: rem(10px);
+    height: 100%;
+    color: inherit;
+    cursor: pointer;
 
     .link {
       z-index: 20;
-      color: inherit;
-      font-weight: map-get($map: $font-weights, $key: 'regular');
+      font-weight: map-get($map: $font-weights, $key: "regular");
       font-size: rem(16px);
       text-decoration: none;
       cursor: pointer;
@@ -68,8 +66,28 @@
       }
     }
 
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -2px;
+      width: 0px;
+      height: 2px;
+      @include light-dark(background-color, $skyblue, $ocean-blue);
+      transition: all 0.2s;
+    }
+
+    &:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    &_link::after{
+      text-decoration: none;
+    }
+
     @include hover {
-      @include light-dark (color, $skyblue, $ocean-blue);
+      @include light-dark(color, $skyblue, $ocean-blue);
       transition: ease-in-out 0.2s;
     }
   }
@@ -113,7 +131,7 @@
     font-family: $Figtree !important;
 
     @include hover {
-      @include light-dark (background-color, $skyblue, $ocean-blue);
+      @include light-dark(background-color, $skyblue, $ocean-blue);
       transition: ease-in-out 0.2s;
     }
   }

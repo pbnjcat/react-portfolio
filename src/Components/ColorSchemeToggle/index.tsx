@@ -16,8 +16,7 @@ export default function ColorToggle() {
       className={classes.light_dark}
       variant="transparent"
       color={dark ? 'yellow' : 'blue'}
-      onClick={() => toggleColorScheme()}
-      title="Toggle color scheme"
+      onClick={() => toggleColorScheme()} 
     >
       {dark ? (
         <IconSun size={30} />

@@ -1,4 +1,4 @@
-import { Text, Title, Box, Container, Image } from '@mantine/core';
+import { Text, Title, Box, Group, Image } from '@mantine/core';
 
 import Hero from '../../Components/Hero';
 import classes from './HomePage.module.scss'
@@ -8,15 +8,15 @@ export default function HomePage() {
     <>
       <Hero />
       <Box component="section">
-        <Container className={classes.about}>
+        <Group className={classes.about}>
           <Title order={1}>About Me</Title>
           <Text c="black" style={{ textAlign: "center" }}>
             Everything you need to control spend and optimize finance operations, all on a single platform.
           </Text>
-        </Container>
-        <Container >
+        </Group>
+        <Group >
           <Image src={''} />
-        </Container>
+        </Group>
 
       </Box>
     </>
