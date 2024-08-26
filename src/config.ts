@@ -4,7 +4,7 @@ const config = {
     metaDescription:
       'View the current events and happenins inside the global stock market',
     siteUrl: '',
-    siteAuthor: 'Randy Li',
+    siteAuthor: ' Randy Li',
     authorUrl: '',
     githubUrl: ''
   }

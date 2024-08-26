@@ -1,29 +1,26 @@
-import { Box, Text, Button, Title } from "@mantine/core";
-import { IconArrowDown } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
+import { Box, Text, Button, Title, Image, Paper } from "@mantine/core";
 
+import { IconArrowDown } from "@tabler/icons-react";
 import classes from "./Hero.module.scss";
 
 export default function Hero() {
-
   return (
-    <div className={classes.wrapper}>
-      <Box component="section" className={classes.inner}>
-        <Title order={1} className={classes.title}>Hello, I'm Randy</Title>
-        <Text className={classes.description}>
-          A web developer.
-        </Text>
-        <Button
-          variant="transparent"
-          component={Link}
-          to="/learn-more"
-          size="lg"
-          className={classes.controls}
-        >
-          Learn more about me
-          <IconArrowDown />
-        </Button>
-      </Box>
-    </div>
+    <Box className={classes.hero_wrapper}>
+      <Paper className={classes.content}>
+        <Title className={classes.content_title}>Hello, I am Randy.</Title>
+        <Text className={classes.content_description}>A web developer.</Text>
+        <Box>
+          <Button
+            p={0}
+            variant="transparent"
+            size="lg"
+            className={classes.action_btn}
+          >
+            Read more about me
+            <IconArrowDown />
+          </Button>
+        </Box>
+      </Paper>
+    </Box>
   );
 }

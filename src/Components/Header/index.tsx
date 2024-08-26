@@ -3,6 +3,7 @@ import {
   Image,
   Stack,
   Title,
+  Paper,
   Group,
   Box,
   Divider,
@@ -41,24 +42,29 @@ export default function Header() {
           RANDY LI
         </Title>
       </Box>
-      {/* header links */}
-      <List className={classes.link_list} visibleFrom="xs">
-        <ListItem className={classes.link_list_item}>
+      {/* Navigation links */}
+      <List className={classes.link_list}>
+        <ListItem className={classes.link_list_item} visibleFrom="xs">
           <Anchor component={Link} to="/" className={classes.link}>
             Experience
           </Anchor>
         </ListItem>
         {links.map((link, index) => (
-          <ListItem key={index} className={classes.link_list_item}>
+          <ListItem key={index} className={classes.link_list_item} visibleFrom="xs">
             <Anchor component={Link} to={link.path} className={classes.link}>
               {link.label}
             </Anchor>
           </ListItem>
         ))}
-        <ColorToggle />
+        <ListItem>
+          <Group>
+            <ColorToggle />
+            <Burger className={classes.burger_icon} onClick={open} />
+          </Group>
+        </ListItem>
       </List>
 
-      <Burger className={classes.burger_icon} onClick={open} />
+      {/* Drawer for mobile navigation */}
       <ScrollArea className={classes.drawer} visibleFrom="sm">
         <Divider my="sm" />
         <Drawer.Root
@@ -95,9 +101,6 @@ export default function Header() {
                     {link.label}
                   </Anchor>
                 ))}
-                <Group justify="center">
-                  <ColorToggle />
-                </Group>
               </Stack>
             </Drawer.Body>
           </Drawer.Content>

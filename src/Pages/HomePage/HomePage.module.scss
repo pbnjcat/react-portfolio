@@ -1,6 +1,78 @@
+@import "../../styles/mantine";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .about {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     color: inherit;
+}
+
+.action_btn {
+    display: block;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    color: $ocean-blue;
+    margin-bottom: var(--mantine-spacing-lg);
+    font-weight: map-get($map: $font-weights, $key: "regular");
+
+    @include hover {
+        transition: ease-in-out 0.2s;
+    }
+}
+
+.circle {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: rem(80px);
+    height: rem(80px);
+    line-height: rem(80px);
+    text-align: center;
+    font-size: rem(60px);
+    overflow: hidden;
+    @include light-dark(border, 2px solid var(--mantine-color-dark-7), 2px solid var(--mantine-color-white));
+}
+
+.angle_down {
+    margin: 0;
+    padding: 0;
+    animation: animate 2000ms linear infinite;
+    filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.3));
+    
+    @include light-dark(color, var(--mantine-color-dark-7), var(--mantine-color-white));
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-50px);
+        filter: drop-shadow(0 10px 0 rgba(255, 255, 255, 0.3));
+    }
+
+    20% {
+        transform: translateY(0);
+        filter: drop-shadow(0 10px 0 rgba(255, 255, 255, 0.3));
+    }
+
+    40% {
+        transform: translateY(0);
+        filter: drop-shadow(0 -10px 0 rgba(255, 255, 255, 0.3));
+    }
+
+    60% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0px 0 rgba(255, 255, 255, 0.3));
+    }
+
+    100% {
+        transform: translateY(100px);
+        filter: drop-shadow(0 -50px 0 rgba(255, 255, 255, 0.3));
+    }
 }

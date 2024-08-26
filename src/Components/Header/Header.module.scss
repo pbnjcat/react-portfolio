@@ -29,22 +29,21 @@
   color: inherit;
   cursor: pointer;
 
-  @include light {
-    color: var(--mantine-color-dark-7);
-  }
+  @include light-dark(color, var(--mantine-color-dark-7), var(--mantine-color-white));
+}
 
-  @include dark {
-    color: var(--mantine-color-white);
-  }
+.link_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link_list {
+  display: flex;
+  align-items: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 
   &_item {
     position: relative;
@@ -73,8 +72,9 @@
       bottom: -2px;
       width: 0px;
       height: 2px;
-      @include light-dark(background-color, $skyblue, $ocean-blue);
       transition: all 0.2s;
+
+      @include light-dark(background-color, $skyblue, $ocean-blue);
     }
 
     &:hover::after {
@@ -82,18 +82,21 @@
       left: 0;
     }
 
-    &_link::after{
+    &_link::after {
       text-decoration: none;
     }
 
     @include hover {
-      @include light-dark(color, $skyblue, $ocean-blue);
       transition: ease-in-out 0.2s;
+      @include light-dark(color, $skyblue, $ocean-blue);
     }
   }
 }
 
 .burger_icon {
+  cursor: pointer;
+  transition: color 0.3s ease;
+
   @include larger-than($mantine-breakpoint-xs) {
     display: none;
   }
@@ -106,8 +109,6 @@
     color: var(--mantine-color-white);
   }
 
-  cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .drawer {
@@ -131,8 +132,8 @@
     font-family: $Figtree !important;
 
     @include hover {
-      @include light-dark(background-color, $skyblue, $ocean-blue);
       transition: ease-in-out 0.2s;
+      @include light-dark(background-color, $skyblue, $ocean-blue);
     }
   }
 
